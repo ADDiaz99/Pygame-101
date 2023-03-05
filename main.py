@@ -12,7 +12,7 @@ test_font = pygame.font.Font('font/Pixeltype.ttf', 50)
 sky_surface = pygame.image.load('graphics/Sky.png').convert()
 ground_surface = pygame.image.load('graphics/ground.png').convert()
 
-score_surface = test_font.render('Score', False, (64, 64, 64))
+score_surface = test_font.render('Score:', False, (64, 64, 64))
 score_rect = score_surface.get_rect(center = (400, 50))
 
 
