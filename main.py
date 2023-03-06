@@ -80,7 +80,10 @@ def display_score():
     current_time = (pygame.time.get_ticks() // 1000) - start_time
     score_surface = test_font.render(f'Puntaje: {current_time}', False, (64, 64, 64))
     score_rect = score_surface.get_rect(center = (400, 50))
+    score_objective = test_font.render(f'Objetivo: 50', False, (64, 64, 64))
+    score_objective_rect = score_objective.get_rect(center = (660, 50))
     screen.blit(score_surface, score_rect)
+    screen.blit(score_objective, score_objective_rect)
     return current_time
 
 def obstacle_movement(obstacle_list):
@@ -182,7 +185,7 @@ player_stand = pygame.image.load('graphics/Player/player_stand.png').convert_alp
 player_stand = pygame.transform.rotozoom(player_stand, 0, 2)
 player_stand_rect = player_stand.get_rect(center = (400, 200))
 
-game_name = test_font.render('Hola Nicky Jam!',False, (111, 196, 169))
+game_name = test_font.render('Hola Nicky Jam, Feliz Aniversario!!',False, (111, 196, 169))
 game_name_rect = game_name.get_rect(center = (400, 80))
 
 game_message = test_font.render('Presiona "Espacio" para empezar, dale!',False, (111, 196, 169))
@@ -256,14 +259,27 @@ while True:
         
         
     else:
-        screen.fill((94, 129, 162))
+        screen.fill((65, 104, 142))
         screen.blit(player_stand, player_stand_rect)
         obstacle_rect_list.clear()
         player_rect.midbottom = (80, 300)
         player_gravity = 0
 
+        hearts = pygame.image.load('graphics/hearts.png').convert_alpha()
+        hearts = pygame.transform.scale(hearts, (180, 180))
+        
+        hearts_2 = pygame.transform.scale(hearts, (180, 180))
+        hearts_2 = pygame.transform.flip(hearts_2, True, False)
+
+        hearts_rect = hearts.get_rect(center = (600, 200))
+        hearts_2_rect = hearts_2.get_rect(center = (200, 200))
+        
+
         score_message = test_font.render(f'Tu puntaje: {score}', False, (111, 196, 169))
         score_message_rect = score_message.get_rect(center = (400, 320))
+
+        score_objective = test_font.render(f'Objetivo: 50', False, (111, 196, 169))
+        score_objective_rect = score_objective.get_rect(center = (600, 320))
         
         game_message_defeat = test_font.render('Perdiste, nerd!',False, (111, 196, 169))
         game_message_defeat_rect = game_message_defeat.get_rect(center = (400, 80))
@@ -271,12 +287,14 @@ while True:
         game_message_victory = test_font.render('Ganaste Nicky!!!', False, (111, 196, 169))
         game_message_victory_rect = game_message_victory.get_rect(center = (400, 80))
         
-        game_message_prize = test_font.render('Tu premio: Cierra los Ojitos', False, (111, 196, 169))
+        game_message_prize = test_font.render('Te Amo, Desbloqueaste un Premio!', False, (111, 196, 169))
         game_message_prize_rect = game_message_prize.get_rect(center = (400, 350))
 
         if score == 0:
             screen.blit(game_name, game_name_rect)
             screen.blit(game_message, game_message_rect)
+            screen.blit(hearts, hearts_rect)
+            screen.blit(hearts_2, hearts_2_rect)
         elif score >= 50:
             screen.blit(score_message, score_message_rect)
             screen.blit(game_message_victory, game_message_victory_rect)
