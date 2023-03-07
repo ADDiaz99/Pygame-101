@@ -1,3 +1,4 @@
+#Welcome to the Runner game!
 import pygame
 from sys import exit
 from random import randint, choice
