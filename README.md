@@ -1,5 +1,5 @@
 ## Runner Game made with Pygame, Enjoy!
-![My Image](graphics/runner.JPG)
+![My Image](data/graphics/runner.JPG)
 
 ```sh
 Keybinds
