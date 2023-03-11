@@ -1,0 +1,17 @@
+Dedicado a la señorita Miranda, mi bolsita de leche <3, por 1er Aniversario.
+
+Para correr, doble click en el documento "main.exe"
+
+Controles:
+[ESCAPE] = Salir del Juego
+[ESPACIO] = Saltar
+[Click izquierdo sobre el personaje] = Saltar
+
+Gameplay:
+Consiste en evadir los enemigos saltando o quedandose quieto,
+el juego se gana cuando el jugador pierde pero tiene mas de 50 puntos acumulados.
+
+
+Desarrollado a finales de febrero del año 2023
+Lenguaje: Python (ver 3.10), Libreria Pygame
+https://github.com/ADDiaz99
